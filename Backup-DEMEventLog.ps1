@@ -1,4 +1,10 @@
-#
+﻿<#
+.SYNOPSIS Backup Windows Eventlogs via DEM
+.NOTES  Author:  JonEsxcli twitter @jonesxcli
+.NOTES  Site:    www.vjonathan.com
+.VERSION v1
+.DATE  8-11-2025
+#>
 
 Function Backup-DEMEventLog {
 $SecLog = Get-WmiObject win32_nteventlogfile | where {$_.LogFileName -eq “Security”} 
