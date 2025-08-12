@@ -13,8 +13,9 @@ $AppLog = Get-WmiObject win32_nteventlogfile | where {$_.LogFileName -eq “Appl
 $YearDate = Get-Date -Format yyyy
 $FolderDate = Get-Date -Format MM_dd_yyyy 
 $EventDate = Get-Date -Format hhmmss_MM_dd_yyyy
-$BackupPath = “\\esx.lab\uem\UEMEventLog” 
 #Location for Event logs.
+$BackupPath = “\\esx.lab\uem\UEMEventLog” 
+
 
 
 #Test Backup Location
