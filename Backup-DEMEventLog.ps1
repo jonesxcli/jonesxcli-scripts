@@ -3,18 +3,18 @@
 .NOTES  Author:  JonEsxcli twitter @jonesxcli
 .NOTES  Site:    www.vjonathan.com
 .VERSION v1
-.DATE  8-11-2025
+.DATE  8-12-2025
 #>
 
 Function Backup-DEMEventLog {
 $SecLog = Get-WmiObject win32_nteventlogfile | where {$_.LogFileName -eq “Security”} 
 $SysLog = Get-WmiObject win32_nteventlogfile | where {$_.LogFileName -eq “System”} 
 $AppLog = Get-WmiObject win32_nteventlogfile | where {$_.LogFileName -eq “Application”} 
-#Location for Event logs. $EventLogService = "Eventlog"
 $YearDate = Get-Date -Format yyyy
 $FolderDate = Get-Date -Format MM_dd_yyyy 
 $EventDate = Get-Date -Format hhmmss_MM_dd_yyyy
 $BackupPath = “\\esx.lab\uem\UEMEventLog” 
+#Location for Event logs.
 
 
 #Test Backup Location
