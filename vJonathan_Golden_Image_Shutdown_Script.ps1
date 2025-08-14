@@ -484,7 +484,7 @@ Write-Host "⏳ Running Function... Enable Windows Update Medic Service " -Foreg
      }
      }
 
-    Else {Write-Host "$WUMedic not found..." -ForegroundColor Yellow
+    Else {Write-Host "🚫 $WUMedic not found..." -ForegroundColor Yellow
 }
      }
      }
