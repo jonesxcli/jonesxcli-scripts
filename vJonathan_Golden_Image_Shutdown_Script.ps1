@@ -17,7 +17,7 @@ Write-Host "⏳ Running Function... Start .Net Opimization." -ForegroundColor Da
 $NGENPath = Join-Path -Path $env:SystemRoot -ChildPath "Microsoft.Net" 
 $NGEN = Get-ChildItem -Path $ngenpath -Recurse "ngen.exe" | % {$_.FullName}
 foreach ($item in $NGEN) {
-       Write-Progress "🔧 Running .NET Optimization...This may take a couple of minutes..."
+       Write-Host "🔧 Running .NET Optimization...This may take a couple of minutes..."
        Start-Process -Wait $item -ArgumentList "executequeueditems"
        }
 }
@@ -728,5 +728,6 @@ switch ($selection) {
 
 
     
+
 
 
