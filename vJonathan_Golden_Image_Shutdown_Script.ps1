@@ -541,7 +541,7 @@ Write-Host "⏳ Running Function... Component Cleanup" -ForegroundColor DarkYell
 Write-Host "🛠️ Windows Module Installer service needed for CBS..." -ForegroundColor Yellow
 Enable-WindowsModuleInstaller
 Write-Host "🗑️ Starting Component Cleanup" -ForegroundColor Green
-dism /online /cleanup-image /startcomponentcleanup /resetbase | Out-Null
+dism /online /cleanup-image /startcomponentcleanup /resetbase
 Write-Host "🛠️ Starting CompactOS NOTE: This may take awhile..." -ForegroundColor Green
 compact /compactos:always 
 Write-Host "✅ Windows Modules Installer service no longer needed..." -ForegroundColor Yellow
@@ -722,6 +722,7 @@ switch ($selection) {
     }
     }
     Write-Host "⛔ Invalid Input...Please Re-Run Script" -ForegroundColor Yellow
+
 
 
     
