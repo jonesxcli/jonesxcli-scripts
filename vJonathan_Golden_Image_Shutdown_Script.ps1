@@ -72,8 +72,8 @@ $WUMedic = "Windows Update Medic Service"
 }
 
 <#############################################################
-# Function to Disable Window Module Installer 
-# https://docs.vmware.com/en/VMware-App-Volumes/2.15/com.vmware.appvolumes.admin.doc/GUID-813F8AD2-4534-42FB-806D-BF327669FA54.html for more detail.
+# Function to Disable Windows Module Installer 
+# https://docs.omnissa.com/bundle/AppVolumesAdminGuideV2312/page/ReduceAppVolumesLoginTimeonWindows10.html for more detail.
 #############################################################>
 
 Function Disable-WindowsModuleInstaller
@@ -97,7 +97,7 @@ Write-Host "⏳ Running Function... Disable Windows Module Installer" -Foregroun
 
 <#############################################################
 # Function to Disable Windows Update Task Scheduler(SIH)
-# See https://twitter.com/edbaker1965/status/976138729541816320 
+# See https://twitter.com/edbaker1965/status/976138729541816320 for more details.
 #############################################################>
 
 Function Disable-WUTasks
@@ -112,7 +112,7 @@ Register-ScheduledTask -TaskName "SIH" -Trigger $Trigger -User $User -Action $Ac
 
 <#############################################################
 # Function to Enable Logon Monitor
-# See https://docs.vmware.com/en/VMware-Horizon-7/7.9/horizon-administration/GUID-618B1899-AF59-4991-83F3-FFFDFF917F22.html
+# See https://docs.omnissa.com/bundle/Horizon-AdministrationV2406/page/UsingtheLogonMonitor.html for more details.
 #############################################################>
 Function Enable-LogonMonitor 
 {
@@ -135,7 +135,7 @@ Function Enable-LogonMonitor
 
 <#############################################################
 # Function to cleanup Logon Monitor
-# See https://docs.vmware.com/en/VMware-Horizon-7/7.9/horizon-administration/GUID-618B1899-AF59-4991-83F3-FFFDFF917F22.html
+# See https://docs.omnissa.com/bundle/Horizon-AdministrationV2406/page/UsingtheLogonMonitor.html for more details.
 #############################################################>
 Function Cleanup-OmnissaLogonMonitorLogs
 {
@@ -157,7 +157,7 @@ Write-Host "🚫 $LogsPath doesn't exist" -ForegroundColor Red}
 
 <#############################################################
 # Function to Disable Logon Monitor
-# See https://docs.vmware.com/en/VMware-Horizon-7/7.9/horizon-administration/GUID-618B1899-AF59-4991-83F3-FFFDFF917F22.html
+# See https://docs.omnissa.com/bundle/Horizon-AdministrationV2406/page/UsingtheLogonMonitor.html for more details.
 #############################################################>
 Function Disable-LogonMonitor 
 {
@@ -179,6 +179,7 @@ Function Disable-LogonMonitor
 
 <#############################################################
 # Function to Disable Speculative
+# See https://support.microsoft.com/en-us/topic/kb4073119-windows-client-guidance-for-it-pros-to-protect-against-silicon-based-microarchitectural-and-speculative-execution-side-channel-vulnerabilities-35820a8a-ae13-1299-88cc-357f104f5b11 for details.
 #############################################################>
 
 Function Disable-Speculative 
@@ -204,6 +205,7 @@ Function Disable-Speculative
  
 <#############################################################
 # Function to Disable Meltdown
+# See https://support.microsoft.com/en-us/topic/kb4073119-windows-client-guidance-for-it-pros-to-protect-against-silicon-based-microarchitectural-and-speculative-execution-side-channel-vulnerabilities-35820a8a-ae13-1299-88cc-357f104f5b11 for details.
 #############################################################>
 
 Function Disable-Meltdown
@@ -373,6 +375,7 @@ $TempStartLayout = @"
 
  <#############################################################
 # Function to Disable Shadowcopies
+# See for more info https://techzone.omnissa.com/creating-optimized-windows-image-vmware-horizon-virtual-desktop
 #############################################################>
 
 Function Disable-Shadowcopies
