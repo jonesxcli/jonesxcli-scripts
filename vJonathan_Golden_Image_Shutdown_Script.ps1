@@ -3,7 +3,7 @@
 .NOTES  Author:  JonEsxcli twitter @jonesxcli
 .NOTES  Site:    www.vjonathan.com
 .VERSION v1.0
-.DATE 8-11-2025
+.DATE 8-14-2025
 #>
 
 
@@ -14,10 +14,12 @@
 Function Start-NetOptimization 
 {
 Write-Host "⏳ Running Function... Start .Net Opimization." -ForegroundColor DarkYellow
-Write-Host "🔧 Running .NET Optimization...This might take a couple of minutes..." -ForegroundColor Green
 $NGENPath = Join-Path -Path $env:SystemRoot -ChildPath "Microsoft.Net" 
-$CurrentNGEN = Get-ChildItem -Path $ngenpath -Recurse | where {$_.Name -eq "ngen.exe"} | foreach {& "$($_.FullName)" "executequeueditems"}
-$CurrentNGEN
+$NGEN = Get-ChildItem -Path $ngenpath -Recurse "ngen.exe" | % {$_.FullName}
+foreach ($item in $NGEN) {
+       Write-Progress "🔧 Running .NET Optimization...This may take a couple of minutes..."
+       Start-Process -Wait $item -ArgumentList "executequeueditems"
+       }
 }
 
 
@@ -573,12 +575,12 @@ function Show-Menu {
     Write-Host "                                                                                                                                          "
     Write-Host "  																      "
     Write-Host "                                                                                                                                          " 
-    Write-Host "  Please update the Import-CustomStartLayout function for your environment needs" -ForegroundColor Yellow
-    Write-Host "  Please update the Import-OEMDefaultAppAssociations function for your environment needs" -ForegroundColor Yellow
+    Write-Host "  Please update the Import-CustomStartLayout function for your environment need.s" -ForegroundColor Yellow
+    Write-Host "  Please update the Import-OEMDefaultAppAssociations function for your environment needs." -ForegroundColor Yellow
     Write-Host "                                                                                                                                          " 
     Write-Host "  Omnissa Logon Monitor will be enabled when running shutdown script." -ForegroundColor Yellow
-    Write-Host "  Please remove 'Enable-LogonMonitor' function if not needed" -ForegroundColor Yellow
-    Write-Host "  Cleanup Manager will run during this shutdown script but will not cleanup any Windows Event logs"  -ForegroundColor Yellow
+    Write-Host "  Please remove 'Enable-LogonMonitor' function if not needed." -ForegroundColor Yellow
+    Write-Host "  Cleanup Manager will run during this shutdown script but will not cleanup any Windows Event logs."  -ForegroundColor Yellow
     Write-Host "                                                                                                                                          "
     Write-Host "  🐦 Follow @JonEsxCli on Twitter" -ForegroundColor Green
     Write-Host "  🖥️ Please visit vjonathan.com " -ForegroundColor Green         
@@ -726,4 +728,5 @@ switch ($selection) {
 
 
     
+
 
