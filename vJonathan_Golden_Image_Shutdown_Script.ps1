@@ -13,11 +13,11 @@
 #############################################################>
 Function Start-NetOptimization 
 {
-Write-Host "⏳ Running Function... Start .Net Opimization" -ForegroundColor DarkYellow
+Write-Host "⏳ Running Function... Start .Net Opimization." -ForegroundColor DarkYellow
+Write-Host "🔧 Running .NET Optimization...This might take a couple of minutes..." -ForegroundColor Green
 $NGENPath = Join-Path -Path $env:SystemRoot -ChildPath "Microsoft.Net" 
 $CurrentNGEN = Get-ChildItem -Path $ngenpath -Recurse | where {$_.Name -eq "ngen.exe"} | foreach {& "$($_.FullName)" "executequeueditems"}
-Write-Host "🔧Running .NET Optimization" -ForegroundColor Green
-$CurrentNGEN | Out-Null
+$CurrentNGEN
 }
 
 
@@ -726,3 +726,4 @@ switch ($selection) {
 
 
     
+
