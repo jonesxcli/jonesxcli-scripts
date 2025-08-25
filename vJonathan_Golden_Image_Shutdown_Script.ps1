@@ -401,7 +401,6 @@ Write-Host "⏳ Running Function... Disable Volume Shadow Copy Serivce" -Foregro
 
  <#############################################################
 # Function to run clean up manager
-# NOTE: DOESN'T CLEANUP WINDOWS EVENT LOGS
 #############################################################>
 
 Function Start-Cleanup
@@ -580,7 +579,7 @@ function Show-Menu {
     Write-Host "                                                                                                                                          " 
     Write-Host "  Omnissa Logon Monitor will be enabled when running shutdown script." -ForegroundColor Yellow
     Write-Host "  Please remove 'Enable-LogonMonitor' function if not needed." -ForegroundColor Yellow
-    Write-Host "  Cleanup Manager will run during this shutdown script but will not cleanup any Windows Event logs."  -ForegroundColor Yellow
+    Write-Host "                                                                                                                                          " 
     Write-Host "                                                                                                                                          "
     Write-Host "  🐦 Follow @JonEsxCli on Twitter" -ForegroundColor Green
     Write-Host "  🖥️ Please visit vjonathan.com " -ForegroundColor Green         
@@ -728,6 +727,7 @@ switch ($selection) {
 
 
     
+
 
 
 
